@@ -4,7 +4,7 @@ from src.repository import ObjektRepository
 from src.schemas import Objs
 
 router = APIRouter(
-    prefix='/weather-date',
+    prefix='/weather',
     tags=['Weather'],
 )
 
