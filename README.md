@@ -1,5 +1,4 @@
-# project
-
+# project_2024.10.11_fastapi_weater
 
 Стек технологий: 
 - FastAPI
@@ -18,10 +17,12 @@
 - установить в развернутое виртуальное окружение необходимые библиотеки
 - pip install pandas openpyxl httpx aioconsole
 
-
 - Запустить Docker
 - docker-compose up -d
-- python output_excel.py
+
+- Далее следует подождать 30 минут чтобы напорнилась база данных
+- Запустьть выполнение файла output_excel.py
+
 - прописать в консоли команду 'start'
 - файл excel.xlsx будет создан в папке с проектом
 
