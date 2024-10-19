@@ -44,9 +44,9 @@ async def main() -> WeatherData:
     """
     try:
         while True:
-            json_obj = await fetch_url(url, params)
-            json_data = await CreatePropertisObject.get_weather_data(json_obj)
-            await ObjektRepository.add_object(json_data)
+            obj = await fetch_url(url, params)
+            data = await CreatePropertisObject.get_weather_data(obj)
+            await ObjektRepository.add_object(data)
             await asyncio.sleep(180)
     except* AttributeError as errors:
         print([str(e) for e in errors.exceptions])

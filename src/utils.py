@@ -58,10 +58,11 @@ class CreatePropertisObject:
         """
         Создание полей объекта базы данных.
         Args:
-            obj (dict): словарь данных, полученный от API
+            data: dict
         Return:
-            data_dict (dict): отфильтрованный словарь данных для БД
+            data_dict: dict
         """
+        time = data['current']['time']
         wind_direction_10m = await self.wind_direction(
             data['current']['wind_direction_10m'],
         )
@@ -71,7 +72,7 @@ class CreatePropertisObject:
         pressure = data['current']['surface_pressure']
         precipitation = data['current']['precipitation']
         data_dict = {
-            'time': f'{data["current"]["time"]}'.replace('T', ' | '),
+            'time': f'{time}'.replace('T', ' | '),
             'temperature_2m': f'Температура: {temperature_2m} °C',
             'wind_direction_10m': f'Направление ветра: {wind_direction_10m}',
             'wind_speed_10m': f'Скорость ветра: {wind_speed_10m} m/s',

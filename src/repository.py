@@ -11,9 +11,9 @@ class ObjektRepository:
         """
         Создание объекта в базе данных.
         Args:
-            data (WeatherData): объект модели WeatherData.
+            data: WeatherData
         Return:
-            id нового объекта, созданного в базе данных.
+            id: int
         """
         async with new_session() as session:
             new_obj = WeatherData(**data)
