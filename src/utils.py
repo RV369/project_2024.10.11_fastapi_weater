@@ -1,5 +1,3 @@
-
-
 class CreatePropertisObject:
     @classmethod
     async def weather_code(self, current_weather_code: str) -> str:
@@ -45,8 +43,23 @@ class CreatePropertisObject:
         Преобразует направление в градусах в обозначение направления ветра.
         """
         list_direction = [
-            'С', 'СВ', 'СВ', 'В', 'В', 'ЮВ', 'ЮВ', 'Ю',
-            'Ю', 'ЮЗ', 'ЮЗ', 'З', 'З', 'СЗ', 'СЗ', 'С', 'С',
+            'С',
+            'СВ',
+            'СВ',
+            'В',
+            'В',
+            'ЮВ',
+            'ЮВ',
+            'Ю',
+            'Ю',
+            'ЮЗ',
+            'ЮЗ',
+            'З',
+            'З',
+            'СЗ',
+            'СЗ',
+            'С',
+            'С',
         ]
         wind = str(
             list_direction[int(float(current_wind_direction_10m) // 22.5)],

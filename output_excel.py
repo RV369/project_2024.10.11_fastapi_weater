@@ -4,7 +4,7 @@ import aioconsole
 import httpx
 import pandas as pd
 
-url = 'http://127.0.0.1:8000/weather-date'
+url = 'http://127.0.0.1:8000/weather'
 
 
 async def fetch_url(url):

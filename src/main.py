@@ -5,7 +5,7 @@ from fastapi import FastAPI
 
 from src.db import init_db
 from src.models import WeatherData
-from src.repository import ObjektRepository
+from src.repository import add_object
 from src.router import router as weacher_router
 from src.utils import CreatePropertisObject
 from src.weather_api import fetch_url
@@ -46,8 +46,8 @@ async def main() -> WeatherData:
         while True:
             obj = await fetch_url(url, params)
             data = await CreatePropertisObject.get_weather_data(obj)
-            await ObjektRepository.add_object(data)
-            await asyncio.sleep(180)
+            await add_object(data)
+            await asyncio.sleep(900)
     except* AttributeError as errors:
         print([str(e) for e in errors.exceptions])
 
