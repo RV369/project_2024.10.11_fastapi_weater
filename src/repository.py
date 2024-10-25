@@ -9,10 +9,7 @@ from src.schemas import Objs
 async def add_object(data: dict, session) -> int:
     """
     Создание объекта в базе данных.
-    Args:
-        data: WeatherData
-    Return:
-        id: int
+
     """
     new_obj = WeatherData(**data)
     session.add(new_obj)
@@ -25,10 +22,7 @@ async def add_object(data: dict, session) -> int:
 async def get_objects(session) -> list[Objs]:
     """
     Выводит список обектов из бвзы данных.
-    Args:
-        limit: int
-    Return:
-        dict_objcts: list[objs]
+
     """
     query = select(WeatherData).order_by(WeatherData.id.desc()).limit(limit=10)
     result = await session.execute(query)
