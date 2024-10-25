@@ -30,10 +30,8 @@ async def get_objects(session) -> list[Objs]:
     Return:
         dict_objcts: list[objs]
     """
-    query = select(WeatherData).order_by(
-        WeatherData.id.desc()).limit(limit=10)
+    query = select(WeatherData).order_by(WeatherData.id.desc()).limit(limit=10)
     result = await session.execute(query)
     obj_models = result.scalars().all()
-    dict_objcts = [
-        Objs.model_validate(obj_model) for obj_model in obj_models]
+    dict_objcts = [Objs.model_validate(obj_model) for obj_model in obj_models]
     return dict_objcts
