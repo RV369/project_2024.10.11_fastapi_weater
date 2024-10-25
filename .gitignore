@@ -28,6 +28,8 @@ share/python-wheels/
 MANIFEST
 text.txt
 get-pip.py
+output_excel_2.py
+weatherapi.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
